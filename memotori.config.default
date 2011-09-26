@@ -1,0 +1,18 @@
+[global]
+template_path = os.path.join(os.path.dirname(__file__), "templates")
+static_path = os.path.join(os.path.dirname(__file__), "static")
+login_url = '/login'
+autoescape = None
+listen_port = 8888
+log_dir = '%s/log' % os.path.abspath(os.path.dirname(__file__))
+password_salt = ''
+
+db_host = 'localhost'
+db_name = 'memotori'
+db_user = ''
+db_password = ''
+
+redis_host = 'localhost'
+redis_port = 6379
+redis_prefix = 'memotori:'
+

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}TOP{% end %}
+
+{% block js %}
+jQuery.event.add(window, "load", function(){
+	$('#memolist').load('/memo/');
+});
+{% end %}
+
+{% block content %}
+
+{% if userinfo %}
+<div>
+  <form action="/memo/xml" method="POST">
+	<textarea name="memo" rows="4" cols="70"></textarea>
+	<input type="submit" value="メモする">
+  </form>
+</div>
+
+<div id="memolist">
+読み込み中...
+</div>
+
+{% else %}
+
+{% end %}
+
+{% end %}

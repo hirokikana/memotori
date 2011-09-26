@@ -1,0 +1,45 @@
+<html>
+  <head>
+	<script src="/static/js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/base.css">
+	<script>
+	  {% block js %}{% end %}
+	</script>
+	<style type="text/css">
+	  {% block css %}{% end %}
+	</style>
+	<title>めもとり - {% block title %}{% end %}</title>
+  </head>
+  <body>
+	<div class="container">
+	  <div class="header">
+		<div class="leftside">
+		  <a href="/">めもとり</a>
+		</div>
+
+		<div class="rightside">
+		  {% if not userid %}
+		  <a href="/login">ログイン</a>
+		  {% else %}
+		  ようこそ {{ userinfo.name }} さん<BR>
+		  <a href="/logout">ログアウト</a>
+		  {% end %}
+		</div>
+	  </div>
+
+	  <div class="menu">
+		ともだちリスト
+	  </div>
+	  
+	  <div class="contents">
+		{% block content %}
+		{% end %}
+	  </div>
+
+	  <div class="footer">
+		&copy;2011 hiroki_kana all right reserved
+	  </div>
+
+	</div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}ログイン{% end %}
+
+{% block css %}
+
+{% end %}
+
+{% block content %}
+
+<form action="/login" method="POST">
+  <div class="form">
+  <h4>めもとりにログイン</h4>
+	<div>
+	  <p>メールアドレス</p>
+	  <input name="username" type="text" size="40">
+	</div>
+	<div>
+	  <p>パスワード</p>
+	  <input name="password" type="password" size="40">
+	</div>
+
+	
+	<input type="submit" value="ログイン">
+  </div>
+</form>
+
+<a href="/user/">ユーザー登録</a>
+
+{% end %}
+

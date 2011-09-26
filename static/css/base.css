@@ -1,0 +1,69 @@
+*{margin: 0px;padding: 0px;}
+div.container {width: 750px}
+div.header {
+	height:50px;
+	font-size: 14px;
+}
+
+div.menu {
+	float:left;
+	width:150px;
+}
+div.contents {
+	float:left;
+	width:600px;
+	padding: 10px;
+}
+
+div.footer {
+	color: #ABABAB;
+	text-align: center;
+	font-size: 12px;
+	clear:both;
+	width:100%;
+}
+
+div.rightside {
+	position: absolute;
+	right: -20px;
+	width: 350px;
+}
+
+h4 {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+div.notice {
+	font-size: 12px;
+	color: #505050;
+	padding: 5px;
+	margin: 3px;
+}
+div.form {
+	padding: 15px;
+	margint: 15px;
+}
+div.form p{
+	font-size: 9px;
+	color: #ABABAB;
+}
+div.form input[type=submit] {
+	margin: 5px;
+}
+div.form {
+	background-color: #EFEFEF;
+}
+
+div.memo_content {
+	padding: 5px;
+	margin: 5px;
+}
+div.memo_content div#content {
+	padding: 10px;
+	background-color: #EFEFEF;
+}
+div.memo_content span#create_date {
+	font-size: 9px;
+	color: #CDCDCD;
+}

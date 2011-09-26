@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}ユーザー登録{% end %}
+
+
+{% block content %}
+
+<form action="/user/" method="POST">
+  <div class="form">
+	<h4>めもとりを使おう！</h4>
+  	<div class="notice">
+	  めもとりを使うにはユーザー登録を行う必要があります。
+	</div>
+
+	<div>
+	  <p>メールアドレス</p>
+	  <input name="mail" type="text" size="40">
+	</div>
+	<div>
+	  <p>ニックネーム</p>
+	  <input name="name" type="text" size="40">
+	</div>
+	<div>
+	  <p>パスワード</p>
+	  <input name="password" type="password" size="40">
+	</div>
+	<div>
+	  <p>パスワード(確認)</p>
+	  <input name="password_confirm" type="password" size="40">
+	</div>
+
+	
+	<input type="submit" value="登録する">
+  </div>
+</form>
+
+
+{% end %}

@@ -1,0 +1,7 @@
+{% for row in memo_list %}
+<div class="memo_content">
+  <span id="uid">{{ row.uid }}</span>
+  <div id="content">{{ row.content }}</div>
+  <span id="create_date">{{ row.create_date }}</span>
+</div>
+{% end %}
