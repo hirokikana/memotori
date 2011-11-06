@@ -1,13 +1,25 @@
-*{margin: 0px;padding: 0px;}
-div.container {width: 750px}
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+}
+h1 {
+	font-size: 18px;
+}
+
+div.container {
+	width: 750px;
+}
 div.header {
 	height:50px;
 	font-size: 14px;
+	position: relative;
+	padding: 10px;
 }
 
 div.menu {
 	float:left;
-	width:150px;
+	padding: 5px;
 }
 div.contents {
 	float:left;
@@ -25,8 +37,7 @@ div.footer {
 
 div.rightside {
 	position: absolute;
-	right: -20px;
-	width: 350px;
+	right: 10px;
 }
 
 h4 {
@@ -67,3 +78,9 @@ div.memo_content span#create_date {
 	font-size: 9px;
 	color: #CDCDCD;
 }
+div.memo_content span#user_name {
+	font-size: 12px;
+	color: #ABABAB;
+}
+
+	

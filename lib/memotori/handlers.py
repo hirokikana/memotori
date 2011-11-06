@@ -102,29 +102,24 @@ class MemoHandler(BaseHandler):
         # 表示
         param = self.param
         memo_model = memotori.model.MemoModel(self.settings)
+        user_model = memotori.model.UserModel(self.settings)
         
         if (path):
             # 詳細表示
             pass
         else:
-            userid = self.get_current_user()
             param['memo_list'] = []
+
+            # 自分のメモの表示
+            userid = self.get_current_user()
             for row in memo_model.find_by_userid(userid):
-                row['content'] = row['content'].replace('/r','');
-                row['content'] = row['content'].replace('/n','<BR>');
-                param['memo_list'].append(row);
+                # filter化 TODO
+                #row['content'] = row['content'].replace('/r','')
+                #row['content'] = row['content'].replace('/n','<BR>')
+                row['userinfo'] = user_model.find_by_id(row['uid'])
+                param['memo_list'].insert(0, row)
+                
             self.render('memo.html', **param)
-            # # 一覧表示(json)
-            # self.set_header('Content-Type', 'application/json')
-            # userid = self.get_current_user()
-            # resultset = []
-            # for rows in memo_model.find_by_userid(userid):
-            #     result = {}
-            #     result['create_date'] = rows.create_date.isoformat()
-            #     result['content'] = rows.content
-            #     resultset.append(result)
-            
-            # self.finish(json.dumps(resultset))
 
     def post(self, path):
         # 投稿

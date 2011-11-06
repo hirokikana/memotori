@@ -5,25 +5,41 @@
 {% block js %}
 jQuery.event.add(window, "load", function(){
 	$('#memolist').load('/memo/');
+	$('#submit_memo').click(function() {
+		$('#memo').attr('disabled', '');
+		data = {'memo': $('#memo').val()};
+		$.post('/memo/xml',
+			   data,
+			   function(data) {
+				   $('#memolist').load('/memo/');
+			   });
+		$('#memo').removeAttr('disabled');
+		$('#memo').val('');
+	});
 });
+
+	
 {% end %}
 
 {% block content %}
-
 {% if userinfo %}
 <div>
   <form action="/memo/xml" method="POST">
-	<textarea name="memo" rows="4" cols="70"></textarea>
-	<input type="submit" value="メモする">
+	<textarea name="memo" rows="4" cols="70" id="memo"></textarea>
+	<input type="button" value="メモする" id="submit_memo">
   </form>
 </div>
 
 <div id="memolist">
 読み込み中...
 </div>
-
 {% else %}
-
+<h1>めもとりをはじめよう！</h1>
+<div>
+  めもとりは、ちょっとした単語を忘れないようにつぶやくことでメモをすることができるサービスです。<BR>
+  ブログや他のつぶやきをするサービスでつぶやくまでもないような本当にささいなことをつぶやいてみましょう！<BR>
+  さっそく<a href="/user/">こちら</a>からはじめよう！
+</div>
 {% end %}
 
 {% end %}
